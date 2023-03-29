@@ -73,11 +73,12 @@ public class MyPlayerService extends PlayerService {
     protected MusicPlayer onCreateMusicPlayer(@NonNull Context context, @NonNull MusicItem musicItem, @NonNull Uri uri) {
         String path = uri.getLastPathSegment();
 
-        if (path != null && path.endsWith(".m3u8")) {
-            return new ExoMusicPlayer(context, mHlsMediaSourceFactory, uri);
-        }
+//         if (path != null && path.endsWith(".m3u8")) {
+//             return new ExoMusicPlayer(context, mHlsMediaSourceFactory, uri);
+//         }
 
-        return new ExoMusicPlayer(context, mProgressiveMediaSourceFactory, uri);
+//         return new ExoMusicPlayer(context, mProgressiveMediaSourceFactory, uri);
+        return new IjkMusicPlayer(context, uri);
     }
 
     @Nullable
